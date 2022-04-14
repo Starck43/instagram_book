@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        html{
+            font-family: system-ui;
+            font-size: 15px;
+        }
+        body{
+            width: auto;
+            margin: 4%;
+            padding: 0;
+        }
+        h1{
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .author{
+            color: mediumorchid;
+        }
+        .post{
+            position: relative; 
+            display: block;
+            margin: 4vh 0 8vh;
+        }
+        title{
+            display: block;
+            font-size: 1.4rem;
+            flex: 100%;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 2%;
+            color: darkslateblue;
+        }
+        title::after{
+            content: '  ————';
+            font-weight: 200;
+        }
+        .content{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .images-cell{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+            align-self: flex-start;
+            flex: 1 1 45%;
+            margin: -1vw;
+        }
+        .col-2{
+            flex: 1 1 45%;
+            padding: 1vw;
+            line-height: 0;
+        }
+        .col-3{
+            flex: 0 1 33.3%;
+            padding: 1vw;
+            max-width: calc(33.3% - 2vw);
+            line-height: 0;
+        }
+        .text-cell {
+            flex: 1 1 36%;
+            width: auto;
+            margin-left: 3%;
+            padding: 2vw;
+            background-color: #eee;
+            font-size: 1rem;
+        }
+        .text-cell p{
+            font-family: monospace;
+            line-height: 1.4;
+        }
+
+        .text-cell .date{
+            margin-top: 1.5rem;
+            margin-bottom: 2vw;
+            text-align: right;
+        }
+        .img-link{
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+            max-height: 100vh;
+        }
+        .border{
+            border: solid 1px #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 576px) {
+            html{
+                font-size: 14px;
+            }
+            h1{
+                font-size: 1.5rem;
+            }
+            .content{
+                flex-direction: column;
+            }
+            .col-2{
+                flex: 1 1 50%;
+                max-width: calc(50% - 2vw);
+            }
+            .col-2:first-child:last-child{
+                max-width: calc(100% - 2vw);
+            }
+            .text-cell{
+                margin-top: 3%;
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            html{
+                font-size: 13px;
+            }
+            .images-cell{
+                flex: 1 1 40%;
+            }
+            .col-2:not(:first-child):last-child{
+                max-width: calc(50% - 2vw);
+            }
+        }
+        @media screen and (max-width: 992px) {
+            html{
+                font-size: 13px;
+            }
+            .text-cell{
+                flex: 1 1 40%;
+            }
+            .col-3{
+                flex: 1 1 40%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">{{title|safe}}</h1>
+    {% if author %}<div class="author">Автор: {{author}}</div>{% endif %}
+    {% for post in posts %}
+    <article id="post-{{loop.index}}" class="post">
+        <title>{{post.date}}</title>
+        <div class="content">
+            <div class="images-cell">
+                {% for image in post.images %}
+                    <div class="{% if post.text and loop.length < 7 %}col-2{% else %}col-3{% endif %}">
+                        <a class="img-link" href="{{ image }}" target="_blank"><img class="border" src="{{ image }}" alt="{{post.date}}" loading="lazy"></a>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if post.text %}
+            <div class="text-cell border">
+                <p>{{ post.text }}</p>
+                <div class="date">{{post.date}}</div>
+            </div>
+            {% endif %}
+        </div>
+    </article>
+    {% endfor %}
+    <a href="#title">вернуться в начало</a>
+</body>
+</html>
