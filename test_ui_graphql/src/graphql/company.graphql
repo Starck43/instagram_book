@@ -1,0 +1,16 @@
+query CompanyQuery {
+    applicantIndividualCompanyRelations
+    {
+        data {
+            id
+            name
+        }
+    }
+    applicantIndividualCompanyPositions
+    {
+        data {
+            id
+            name
+        }
+    }
+}
