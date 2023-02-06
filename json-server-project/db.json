@@ -1,24 +1,13 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": "2"
-    }
-  ],
+  "posts": [],
   "articles": [
     {
       "id": "1",
-      "title": "Javascript 2021",
-      "subtitle": "Новые фичи",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 182,
-      "createdAt": "26.08.2022",
+      "title": "Javascript news features",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://avatars.mds.yandex.net/i?id=3b03320a4ed6ed61c7dde37c8c303119dabf3a14-4345998-images-thumbs&n=13",
+      "views": 822,
+      "createdAt": "16.06.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -89,8 +78,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
-      "views": 540,
-      "createdAt": "20.07.2022",
+      "views": 1204,
+      "createdAt": "06.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -254,8 +243,8 @@
     },
     {
       "id": "9",
-      "title": "Kotlin update",
-      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "title": "Kotlin last updated",
+      "subtitle": "Что нового в Kotlin за 2021 год?",
       "img": "https://avatars.mds.yandex.net/i?id=4b5ddde86668aa74db1b0a534f9e2511_sr-4825382-images-thumbs&n=13",
       "views": 102,
       "createdAt": "02.11.2022",
@@ -467,9 +456,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "0"
     }
   ],
   "comments": [
@@ -508,6 +494,103 @@
       "userId": "2",
       "text": "New comment",
       "id": "GqITgSH"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "text": "new",
+      "id": "6SCyEjd"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "text": "second",
+      "id": "oCRKhgF"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/home"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "about"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "value": 4,
+      "feedback": "awesome article, perfect!",
+      "userId": "1",
+      "articleId": "9"
+    },
+    {
+      "id": "2",
+      "value": 5,
+      "feedback": "awesome article 2, perfect!",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "1",
+      "value": 4,
+      "feedback": "Great article 3, perfect!",
+      "userId": "2",
+      "articleId": "3"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "value": 4,
+      "feedback": "",
+      "id": "F0Cx8LB"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "value": 4,
+      "feedback": "",
+      "id": "DNBgTiM"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "value": 3,
+      "feedback": "Good article",
+      "id": "dLhO5OF"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "value": 5,
+      "feedback": "Yesss!",
+      "id": "_VjbATx"
     }
   ],
   "users": [
@@ -516,13 +599,25 @@
       "username": "admin",
       "password": "admin",
       "avatar": "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png",
-      "role": "ADMIN"
+      "roles": [
+        "ADMIN"
+      ]
     },
     {
       "id": "2",
+      "username": "editor",
+      "password": "editor",
+      "roles": [
+        "EDITOR"
+      ]
+    },
+    {
+      "id": "3",
       "username": "guest",
       "password": "guest",
-      "role": "GUEST"
+      "roles": [
+        "GUEST"
+      ]
     }
   ],
   "profile": [
@@ -534,13 +629,23 @@
       "phone": "007123456789",
       "avatar": "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png",
       "username": "admin",
-      "country": "Cyprus"
+      "country": "Russia"
     },
     {
       "id": "2",
       "name": "Евгений",
       "surname": "Шабалин",
       "email": "eugene@yandex.ru",
+      "phone": "007123456780",
+      "avatar": "https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg",
+      "username": "editor",
+      "country": "Russia"
+    },
+    {
+      "id": "3",
+      "name": "Michael",
+      "surname": "Jackson",
+      "email": "test@mail.ru",
       "phone": "007123456780",
       "avatar": "https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg",
       "username": "guest",
